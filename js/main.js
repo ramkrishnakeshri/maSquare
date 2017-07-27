@@ -15,13 +15,14 @@ $(document).ready(function(){
 
 
     owl.on('initialize.owl.carousel initialized.owl.carousel changed.owl.carousel',
-        function (e){
-        var slide = $('.owl-item.active .text').children();
-            console.log(slide);            
-            tween(e, slide)
+        function (){
+            var slide = $('.owl-item .text').children();
+            TweenMax.killAll();
+            tween(slide)
         }
     );
-    function tween(e, slide) {
+    function tween(slide) {
         TweenMax.staggerFromTo(slide, 1, {opacity: 0, y: 80}, {opacity: 1, y:0}, 0.2)
     }
+    tween($('.owl-item.active .text').children());
 });
