@@ -3,7 +3,6 @@
  */
 $(document).ready(function(){
 
-    var tl = new TimelineMax();
 
     var owl = $('.owl-carousel');
 
@@ -13,14 +12,16 @@ $(document).ready(function(){
         nav: true,
         dots: false
     });
-    function tween() {
-        var slide = $('.owl.item.active .text');
-        console.log(slide.children());
-        TweenMax.set(slide.children(), 1, {opacity: 0, y: 80}, {opacity: 1, y:0}, 0.2)
-    }
-    owl.on('changed.owl.carousel',
+
+
+    owl.on('initialize.owl.carousel initialized.owl.carousel changed.owl.carousel',
         function (e){
-            tween(e)
+        var slide = $('.owl-item.active .text').children();
+            console.log(slide);            
+            tween(e, slide)
         }
     );
+    function tween(e, slide) {
+        TweenMax.staggerFromTo(slide, 1, {opacity: 0, y: 80}, {opacity: 1, y:0}, 0.2)
+    }
 });
