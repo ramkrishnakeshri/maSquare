@@ -1,37 +1,45 @@
-html{
-    height:100%;
+html {
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
 }
-body, section{
+
+body,
+section {
     position: relative;
+    font-family: "Raleway";
 }
-div.owl-carousel{
+
+div.owl-carousel {
     position: relative;
-    height:100%;
+    height: 100%;
     width: 100%;
 }
-.owl-carousel .slide{
+
+.owl-carousel .slide {
     position: relative;
     width: 100%;
     height: calc(100vh - 60px);
     background: url('http://placehold.it/1920x700') no-repeat center;
     background-size: cover;
 }
-.slide .text{
+
+.slide .text {
     position: relative;
     left: 50%;
     top: 30%;
     transform: translate(-50%);
     width: 60%;
 }
-.text h1, .text h4{
+
+.text h1,
+.text h4 {
     position: relative;
 }
+
 .owl-item {
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
-.owl-item.active .text{
 
-}
+.owl-item.active .text {}
