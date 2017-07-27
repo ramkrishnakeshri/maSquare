@@ -1,0 +1,37 @@
+html{
+    height:100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+body, section{
+    position: relative;
+}
+div.owl-carousel{
+    position: relative;
+    height:100%;
+    width: 100%;
+}
+.owl-carousel .slide{
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: url('http://placehold.it/1920x700') no-repeat center;
+    background-size: cover;
+}
+.slide .text{
+    position: relative;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%);
+    width: 60%;
+}
+.text h1, .text h4{
+    position: relative;
+}
+.owl-item {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+}
+.owl-item.active .text{
+
+}
