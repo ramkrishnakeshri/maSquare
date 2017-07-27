@@ -14,13 +14,12 @@ $(document).ready(function(){
         dots: false
     });
     function tween() {
-        var slide = $('.owl.item.active>.slide>.text');
-        console.log(this);
+        var slide = $('.owl.item.active .text');
+        console.log(slide.children());
         TweenMax.set(slide.children(), 1, {opacity: 0, y: 80}, {opacity: 1, y:0}, 0.2)
     }
     owl.on('changed.owl.carousel',
         function (e){
-            tl.kill();
             tween(e)
         }
     );
